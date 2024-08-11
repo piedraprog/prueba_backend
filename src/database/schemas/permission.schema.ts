@@ -21,8 +21,7 @@ export const PermissionValidationSchema = z.object({
 });
 
 export enum  PermissionEnum {
-    CREATE = 'create',
+    WRITE = 'write',
     READ = 'read',
-    UPDATE = 'update',
     DELETE = 'delete'
 }
