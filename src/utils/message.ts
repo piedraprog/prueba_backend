@@ -1,36 +1,45 @@
 type InfoMessages = {
-    errorDeleting: string;
-    errorFetching: string;
-    errorFetchingOneMomentById: string;
-    errorPosting: string;
-    errorKeyMissing: string;
-    errorInvalidKey: string;
-    accessDenied: string;
-    tokenNotFound: string;
-    userNotFound: string;
-    contentEmpty: string;
-    unauthorized: string;
-    successRegistering: string;
-    successDeleting: string;
-};
+    successCreating: string,
+    successFetching: string,
+    successDeleting: string,
+    sucesssUpdating: string,
+
+    errorCreating: string,
+    errorDeleting: string,
+    errorFetching: string,
+    errorFetchingById: string,
+
+    errorKeyMissing: string,
+    errorInvalidKey: string,
+
+    accessDenied: string,
+    tokenNotFound: string,
+    notFound: string,
+    contentEmpty: string,
+    unauthorized: string,
+    invalidData: string,
+    alredyExists: string
+}
 
 export const INFO_MSG: InfoMessages = {
-	errorDeleting :'something goes wrong deleting the data',
-	errorFetching: 'something goes wrong fetching data',
-	errorFetchingOneMomentById: 'something goes wrong fetching the data',
-	errorPosting: 'something goes wrong posting the data',
-	errorKeyMissing: 'fetch Key is missing, consult the documentation',
-	errorInvalidKey: 'Invalid key on request body, consult documentation',
-	
-	accessDenied: 'Error access denied',
-	tokenNotFound: 'Missing token on request body',
-	userNotFound: 'User not found or does not exist',
-	contentEmpty: 'Content can not be empty',
-	
-	unauthorized: 'without authorization to make this request, please contact support to resolve this issue',
-	
-	successRegistering: 'Registered successfully',
-	successDeleting: 'Delete successfully',
-};
+	successCreating: 'Resource successfully created.',
+    successFetching: 'Resources successfully retrieved.',
+    successDeleting: 'Resource successfully deleted.',
+    sucesssUpdating: 'Resource successfully updated.',
 
-console.log(INFO_MSG.accessDenied)
+    errorCreating: 'Error creating the resource.',
+    errorDeleting: 'Error deleting the resource.',
+    errorFetching: 'Error fetching the resources.',
+
+    errorFetchingById: 'Error fetching the resource by ID.',
+    errorKeyMissing: 'Required key is missing.',
+    errorInvalidKey: 'Invalid key provided.',
+
+    accessDenied: 'Access denied.',
+    tokenNotFound: 'Token not found.',
+    notFound: 'Resource not found.',
+    contentEmpty: 'No content provided.',
+    unauthorized: 'Unauthorized access.',
+    invalidData: "Invalid data provided.",
+    alredyExists: "alredy exists."
+};
