@@ -1,13 +1,11 @@
-import express, { Request, Response } from 'express';
+import { Logger } from './utils/logger';
+import app from './app';
+import './database/db';
 
-const app = express();
-
-app.use(express.json());
-
-app.get('/', (req: Request, res: Response) => {
-  res.send('Welcome to the RESTful API!');
-});
-
-app.listen(3000, () => {
-  console.log('Server is running on port 3000');
+app.listen(app.get('port'), () => {
+  Logger.info({
+    message:`server on port, ${app.get('port')}`, 
+    file: 'index.js',
+    service: 'server'
+  });  
 })
