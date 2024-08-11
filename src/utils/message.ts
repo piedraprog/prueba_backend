@@ -32,5 +32,3 @@ export const INFO_MSG: InfoMessages = {
 	successRegistering: 'Registered successfully',
 	successDeleting: 'Delete successfully',
 };
-
-console.log(INFO_MSG.accessDenied)
