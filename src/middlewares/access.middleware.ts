@@ -1,8 +1,8 @@
 
 import { NextFunction, Request, Response } from 'express';
-import { UserRole } from '../database/schemas/user-role.schema';
-import { RolePermission } from '../database/schemas/role-permission.schema';
-import { Permission } from '../database/schemas/permission.schema';
+import { UserRole } from '../database/schemas/user/user-role.schema';
+import { RolePermission } from '../database/schemas/system-schemas/role-permission.schema';
+import { Permission } from '../database/schemas/system-schemas/permission.schema';
 import { INFO_MSG } from '../utils/message';
 import { createResponse } from '../utils/create-response';
 

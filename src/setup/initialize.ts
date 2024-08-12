@@ -1,10 +1,10 @@
 import mongoose from 'mongoose';
-import { Permission } from '../database/schemas/permission.schema';
-import { RolePermission } from '../database/schemas/role-permission.schema';
-import { Role } from '../database/schemas/role.schema';
+import { Permission } from '../database/schemas/system-schemas/permission.schema';
+import { RolePermission } from '../database/schemas/system-schemas/role-permission.schema';
+import { Role } from '../database/schemas/system-schemas/role.schema';
 import config from '../config';
-import { User } from '../database/schemas/user.schema';
-import { UserRole } from '../database/schemas/user-role.schema';
+import { User } from '../database/schemas/user/user.schema';
+import { UserRole } from '../database/schemas/user/user-role.schema';
 import bcrypt from 'bcrypt';
 
 // Configura la conexión a la base de datos

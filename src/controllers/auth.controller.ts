@@ -1,15 +1,15 @@
 import { Request, Response } from 'express';
 import bcrypt from 'bcrypt';
 import jwt, { JwtPayload } from 'jsonwebtoken';
-import { User } from '../database/schemas/user.schema';
+import { User } from '../database/schemas/user/user.schema';
 import { z, ZodError } from 'zod';
-import { UserSession } from '../database/schemas/user-session.schema';
+import { UserSession } from '../database/schemas/user/user-session.schema';
 import crypto from 'crypto';
 import config from '../config';
 import { createResponse } from '../utils/create-response';
-import { Role } from '../database/schemas/role.schema';
+import { Role } from '../database/schemas/system-schemas/role.schema';
 import { INFO_MSG } from '../utils/message';
-import { UserRole } from '../database/schemas/user-role.schema';
+import { UserRole } from '../database/schemas/user/user-role.schema';
 
 const LoginValidationSchema = z.object({
   email: z.string().email(),

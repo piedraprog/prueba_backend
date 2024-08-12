@@ -3,11 +3,14 @@ type InfoMessages = {
     successFetching: string,
     successDeleting: string,
     sucesssUpdating: string,
+    successRestoring: string,
 
     errorCreating: string,
     errorDeleting: string,
+    errorUpdating: string,	
     errorFetching: string,
     errorFetchingById: string,
+    errorRestoring: string,
 
     errorKeyMissing: string,
     errorInvalidKey: string,
@@ -26,10 +29,13 @@ export const INFO_MSG: InfoMessages = {
     successFetching: 'Resources successfully retrieved.',
     successDeleting: 'Resource successfully deleted.',
     sucesssUpdating: 'Resource successfully updated.',
+    successRestoring: 'Resource successfully restored.',
 
     errorCreating: 'Error creating the resource.',
     errorDeleting: 'Error deleting the resource.',
     errorFetching: 'Error fetching the resources.',
+    errorUpdating: 'Error updating the resource.',
+    errorRestoring: 'Error restoring the resource.',
 
     errorFetchingById: 'Error fetching the resource by ID.',
     errorKeyMissing: 'Required key is missing.',
