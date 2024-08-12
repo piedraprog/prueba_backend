@@ -70,15 +70,34 @@ export const getEvaluationById = async (req: Request, res: Response) => {
 
 export const updateEvaluation = async (req: Request, res: Response) => {
   try {
-    const validatedData = EvaluationValidationSchema.parse(req.body);
-    const evaluation = await Evaluation.findByIdAndUpdate(req.params.id, validatedData, { new: true });
-    if (evaluation) {
-      res.status(200).send(createResponse(true, 'Evaluation updated successfully', evaluation));
-    } else {
-      res.status(404).send(createResponse(false, 'Evaluation not found', ''));
+
+    const { id } = req.params;
+    console.log(id)
+    if(!id) {
+      return res.status(400).send(
+        createResponse(false, INFO_MSG.errorKeyMissing, 'id missing in request params')
+      );
     }
+
+    const validatedData = EvaluationValidationSchema.parse(req.body);
+    if (!validatedData || !id) {
+      return res.status(400).send(
+        createResponse(false, INFO_MSG.invalidData, '')
+      );
+    }
+
+    const evaluation = await Evaluation.findByIdAndUpdate(id, validatedData, { new: true });
+
+    if (evaluation) {
+      res.status(200).send(createResponse(true, INFO_MSG.sucesssUpdating, evaluation));
+    } else {
+      res.status(404).send(createResponse(false, INFO_MSG.notFound, ''));
+    }
+
   } catch (error: any) {
-    res.status(400).send(createResponse(false, 'Error updating evaluation', error.message));
+
+    res.status(400).send(createResponse(false, INFO_MSG.errorUpdating, error.message));
+
   }
 };
 

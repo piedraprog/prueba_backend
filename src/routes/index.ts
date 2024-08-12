@@ -16,11 +16,11 @@ AppRoutes.use('/system-config', validateJWT, SystemConfig);
 
 AppRoutes.use('/employee', validateJWT, EmployeeRoutes);
 
-AppRoutes.use('/evaluations', EvaluationRoutes);
+AppRoutes.use('/evaluations', validateJWT, EvaluationRoutes);
 
-AppRoutes.use('/questions', QuestionRoutes)
+AppRoutes.use('/questions', validateJWT, QuestionRoutes)
 
-AppRoutes.use('/answers', AnswersRoutes)
+AppRoutes.use('/answers', validateJWT, AnswersRoutes)
 
 
 

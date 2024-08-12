@@ -7,6 +7,8 @@ import {
     restoreEmployee,
     getEmployeeById 
 } from '../controllers/employee.controller';
+import { accessValidation } from '../middlewares/access.middleware';
+import { PermissionEnum } from '../database/schemas/system-schemas/permission.schema';
 
 const EmployeeRoutes = Router();
 
@@ -14,12 +16,12 @@ EmployeeRoutes.get('/', getEmployees);
 
 EmployeeRoutes.get('/:id', getEmployeeById);
 
-EmployeeRoutes.post('/', createEmployee);
+EmployeeRoutes.post('/', accessValidation(PermissionEnum.WRITE),createEmployee);
 
-EmployeeRoutes.put('/', updateEmployee);
+EmployeeRoutes.put('/', accessValidation(PermissionEnum.WRITE), updateEmployee);
 
-EmployeeRoutes.put('/delete', softDeleteEmployee);
+EmployeeRoutes.put('/delete', accessValidation(PermissionEnum.DELETE), softDeleteEmployee);
 
-EmployeeRoutes.put('/restore', restoreEmployee);
+EmployeeRoutes.put('/restore', accessValidation(PermissionEnum.DELETE), restoreEmployee);
 
 export default EmployeeRoutes

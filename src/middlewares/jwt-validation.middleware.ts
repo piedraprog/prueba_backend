@@ -25,7 +25,8 @@ export const validateJWT = (req: CustomRequest, res: Response, next: NextFunctio
   } catch (error) {
     return res.status(400).json({
       success: false,
-      message: INFO_MSG.errorInvalidKey
+      message: INFO_MSG.errorInvalidKey,
+      error
     });
   }
 };
