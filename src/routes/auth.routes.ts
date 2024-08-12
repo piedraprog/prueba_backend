@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { login, refreshToken, register } from '../controllers/auth.controller';
 import { validateJWT } from '../middlewares/jwt-validation.middleware';
-import { PermissionEnum } from '../database/schemas/permission.schema';
+import { PermissionEnum } from '../database/schemas/system-schemas/permission.schema';
 import { accessValidation } from '../middlewares/access.middleware';
 
 const AuthRoutes = Router();

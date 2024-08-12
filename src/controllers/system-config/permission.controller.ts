@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { IPermission, Permission, PermissionValidationSchema } from "../../database/schemas/permission.schema";
+import { IPermission, Permission, PermissionValidationSchema } from "../../database/schemas/system-schemas/permission.schema";
 import { createResponse } from "../../utils/create-response";
 import { INFO_MSG } from "../../utils/message";
 

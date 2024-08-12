@@ -1,9 +1,9 @@
 import { Request, Response } from 'express';
-import { Role } from '../../database/schemas/role.schema';
+import { Role } from '../../database/schemas/system-schemas/role.schema';
 import { createResponse } from '../../utils/create-response';
 import { INFO_MSG } from '../../utils/message';
-import { RolePermission } from '../../database/schemas/role-permission.schema';
-import { Permission } from '../../database/schemas/permission.schema';
+import { RolePermission } from '../../database/schemas/system-schemas/role-permission.schema';
+import { Permission } from '../../database/schemas/system-schemas/permission.schema';
 
 
 export const getRoles = async (_req: Request, res: Response) => {
