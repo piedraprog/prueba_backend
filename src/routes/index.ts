@@ -6,6 +6,7 @@ import EmployeeRoutes from "./employees.routes";
 import EvaluationRoutes from "./evaluations.routes";
 import QuestionRoutes from "./questions.routes";
 import AnswersRoutes from "./answers.routes";
+import ReportsRoutes from "./reports.routes";
 
 const AppRoutes = Router()
 
@@ -18,10 +19,10 @@ AppRoutes.use('/employee', validateJWT, EmployeeRoutes);
 
 AppRoutes.use('/evaluations', validateJWT, EvaluationRoutes);
 
-AppRoutes.use('/questions', validateJWT, QuestionRoutes)
+AppRoutes.use('/questions', validateJWT, QuestionRoutes);
 
-AppRoutes.use('/answers', validateJWT, AnswersRoutes)
+AppRoutes.use('/answers', validateJWT, AnswersRoutes);
 
-
+AppRoutes.use('/reports', validateJWT, ReportsRoutes);
 
 export default AppRoutes;
