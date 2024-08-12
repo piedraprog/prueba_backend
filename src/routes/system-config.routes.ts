@@ -1,7 +1,7 @@
 import { Router } from "express";
 import SystemConfig from "../controllers/system-config";
 import { accessValidation } from "../middlewares/access.middleware";
-import { PermissionEnum } from "../database/schemas/permission.schema";
+import { PermissionEnum } from "../database/schemas/system-schemas/permission.schema";
 
 const SystemRouter = Router()
 

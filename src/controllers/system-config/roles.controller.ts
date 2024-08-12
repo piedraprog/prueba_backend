@@ -1,9 +1,9 @@
 import { Request, Response } from 'express';
-import { Role } from '../../database/schemas/role.schema';
+import { Role } from '../../database/schemas/system-schemas/role.schema';
 import { createResponse } from '../../utils/create-response';
 import { INFO_MSG } from '../../utils/message';
-import { RolePermission } from '../../database/schemas/role-permission.schema';
-import { Permission } from '../../database/schemas/permission.schema';
+import { RolePermission } from '../../database/schemas/system-schemas/role-permission.schema';
+import { Permission } from '../../database/schemas/system-schemas/permission.schema';
 
 
 export const getRoles = async (_req: Request, res: Response) => {
@@ -27,7 +27,6 @@ export const getRoles = async (_req: Request, res: Response) => {
 export const getRoleById = async (req: Request, res: Response) => {
   try {
     const { id } = req.params;
-    console.log("🚀 ~ getRoleById ~ id:", id)
     
     const role = await Role.findById(id);
 
