@@ -27,7 +27,6 @@ export const getRoles = async (_req: Request, res: Response) => {
 export const getRoleById = async (req: Request, res: Response) => {
   try {
     const { id } = req.params;
-    console.log("🚀 ~ getRoleById ~ id:", id)
     
     const role = await Role.findById(id);
 

@@ -87,7 +87,7 @@ export const updateEmployee = async (req: Request, res: Response) => {
   try {
 
     const validatedData = EmployeeValidationSchema.safeParse(req.body);
-    console.log("🚀 ~ updateEmployee ~ validatedData:", validatedData)
+
     if (!validatedData.success) {
       return res.status(400).send(
         createResponse(
