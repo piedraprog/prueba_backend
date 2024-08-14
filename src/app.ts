@@ -3,7 +3,7 @@ import cors from 'cors';
 import config from './config';
 import { morganMiddleware } from './middlewares/morgan.middleware';
 import AppRoutes from './routes';
-
+import { rateLimit } from 'express-rate-limit'
 
 const app = express();
 
@@ -19,6 +19,15 @@ app.use(morganMiddleware);
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+
+// RATE LIMIT
+const limiter = rateLimit({
+	windowMs: 15 * 60 * 1000, // 15 minutes
+	limit: 50,
+	standardHeaders: 'draft-7',
+	legacyHeaders: false, // Disable the `X-RateLimit-*` headers.
+})
+app.use(limiter)
 
 // general endpoint && list all the routes
 app.get('/', (req: Request, res: Response) => {
